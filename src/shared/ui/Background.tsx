@@ -1,5 +1,5 @@
-import { ReactNode, FC } from 'react'
-import { StyleSheet, ImageBackground } from 'react-native'
+import { FC, ReactNode } from 'react'
+import { ImageBackground, StyleSheet } from 'react-native'
 
 export const Background: FC<{ children: ReactNode }> = ({ children }) => (
   <ImageBackground source={require('shared/assets/images/background.png')} style={styles.bgImage}>

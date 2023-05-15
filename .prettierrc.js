@@ -1,7 +1,20 @@
 module.exports = {
-  trailingComma: "es5",
+  trailingComma: 'es5',
   semi: false,
   singleQuote: true,
   printWidth: 120,
-  endOfLine: "auto",
-};
+  endOfLine: 'auto',
+  importOrder: [
+    '<THIRD_PARTY_MODULES>',
+    '^app/(.*)$',
+    '^pages/(.*)$',
+    '^widgets/(.*)$',
+    '^features/(.*)$',
+    '^entities/(.*)$',
+    '^shared/(.*)$',
+    '^../(.*)',
+    '^./(.*)',
+  ],
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+}

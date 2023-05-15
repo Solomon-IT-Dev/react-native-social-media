@@ -1,5 +1,5 @@
 {
-  "extends": ["@feature-sliced"],
+  "extends": ["@feature-sliced", "prettier"],
   "parser": "@typescript-eslint/parser",
   "settings": {
     "import/resolver": {
@@ -23,6 +23,16 @@
           "shared/*"
         ]
       }
-    ]
-  }
+    ],
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "prettier/prettier": "error"
+  },
+  "plugins": [
+    "import", "prettier"
+  ]
 }
