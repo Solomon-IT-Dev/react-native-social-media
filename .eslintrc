@@ -1,0 +1,28 @@
+{
+  "extends": ["@feature-sliced"],
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "import/no-internal-modules": [
+      "warn",
+      {
+        "allow": [
+          "**/ui/*",
+          "**/assets/*/*",
+          "pages/*",
+          "processes/*",
+          "widgets/*",
+          "features/*",
+          "entities/*",
+          "shared/*"
+        ]
+      }
+    ]
+  }
+}
