@@ -19,6 +19,7 @@
           "processes/*",
           "widgets/*",
           "features/*",
+          "entities",
           "entities/*",
           "shared/*"
         ]
@@ -29,8 +30,7 @@
       {
         "count": 1
       }
-    ],
-    "prettier/prettier": "error"
+    ]
   },
   "plugins": [
     "import", "prettier"

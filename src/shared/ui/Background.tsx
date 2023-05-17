@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   bgImage: {
     flex: 1,
     resizeMode: 'cover',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 })
