@@ -3,13 +3,20 @@ import { StyleSheet, View } from 'react-native'
 
 import { Title } from 'shared'
 
-export const SignUpCard: FC<{ avatar: ReactElement; form: ReactElement }> = ({ avatar, form }) => (
+interface ISignUpCard {
+  avatar: ReactElement
+  form: ReactElement
+  pageSwitch: ReactElement
+}
+
+export const SignUpCard: FC<ISignUpCard> = ({ avatar, form, pageSwitch }) => (
   <View style={styles.container}>
     <View style={styles.avatarContainer}>{avatar}</View>
     <View style={styles.titleContainer}>
       <Title text="Sign Up" />
     </View>
     <View style={styles.formContainer}>{form}</View>
+    <View style={styles.pageSwitchContainer}>{pageSwitch}</View>
   </View>
 )
 
@@ -32,11 +39,15 @@ const styles = StyleSheet.create({
     transform: [{ translateY: -60 }],
   },
   titleContainer: {
-    marginHorizontal: 16,
     marginTop: 92,
+    marginHorizontal: 16,
     marginBottom: 32,
   },
   formContainer: {
+    marginHorizontal: 16,
+  },
+  pageSwitchContainer: {
+    marginTop: 16,
     marginHorizontal: 16,
   },
 })
