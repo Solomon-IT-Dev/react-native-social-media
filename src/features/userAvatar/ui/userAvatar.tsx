@@ -1,17 +1,24 @@
 import { FC } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 
-export const UserAvatar: FC = () => <View style={styles.avatarContainer}>AVATAR</View>
+import { AddIcon, Avatar, AvatarSizeEnum, RemoveIcon } from 'shared'
+
+export const UserAvatar: FC = () => (
+  <View style={styles.userAvatarContainer}>
+    <Avatar size={AvatarSizeEnum.NORMAL} />
+    <TouchableOpacity activeOpacity={0.6} style={styles.actionButton}>
+      <AddIcon />
+    </TouchableOpacity>
+  </View>
+)
 
 const styles = StyleSheet.create({
-  avatarContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 120,
-    height: 120,
-    borderRadius: 16,
-    overflow: 'hidden',
-    backgroundColor: '#F6F6F6',
+  userAvatarContainer: {
+    position: 'relative',
+  },
+  actionButton: {
+    position: 'absolute',
+    right: -12,
+    bottom: 14,
   },
 })

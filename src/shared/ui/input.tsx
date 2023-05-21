@@ -8,7 +8,16 @@ interface ITextInput {
 }
 
 export const Input: FC<ITextInput> = ({ labelText, placeholderText, secureTextEntry = false }) => {
+  const [isFocused, setIsFocused] = useState(false)
   const [isSecureText, setSecureText] = useState(secureTextEntry)
+
+  const handleFocus = () => {
+    setIsFocused(true)
+  }
+
+  const handleBlur = () => {
+    setIsFocused(false)
+  }
 
   const toggleSecureText = () => {
     setSecureText(!isSecureText)
@@ -19,9 +28,11 @@ export const Input: FC<ITextInput> = ({ labelText, placeholderText, secureTextEn
       {labelText && <Text style={styles.inputLabel}>{labelText}</Text>}
       <View style={styles.container}>
         <TextInput
-          style={styles.textInput}
+          style={[styles.input, isFocused && styles.inputFocused]}
           placeholder={placeholderText}
           placeholderTextColor="#BDBDBD"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           secureTextEntry={isSecureText}
         />
         {secureTextEntry && (
@@ -45,8 +56,8 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
   },
-  textInput: {
-    height: 50,
+  input: {
+    height: 52,
     padding: 16,
     fontWeight: '400',
     fontSize: 16,
@@ -58,10 +69,14 @@ const styles = StyleSheet.create({
     color: '#212121',
     backgroundColor: '#F6F6F6',
   },
+  inputFocused: {
+    borderColor: '#FF6C00',
+    backgroundColor: '#FFFFFF',
+  },
   toggleButton: {
     position: 'absolute',
     right: 0,
-    padding: 16,
+    padding: 16.5,
   },
   toggleButtonText: {
     fontWeight: '400',
