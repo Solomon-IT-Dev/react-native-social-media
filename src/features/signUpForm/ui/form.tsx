@@ -21,7 +21,7 @@ export const SignUpForm: FC = () => {
           secureTextEntry
         />
       </View>
-      <Button title="Sign up" onPress={handleSubmit} disabled={allowSubmit} />
+      <Button title="Sign up" onPress={handleSubmit} disabled={!allowSubmit} />
     </View>
   )
 }
