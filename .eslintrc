@@ -16,6 +16,7 @@
           "**/ui/*",
           "**/assets/*/*",
           "**/types/*",
+          "**/lib/*",
           "pages/*",
           "processes/*",
           "widgets/*",

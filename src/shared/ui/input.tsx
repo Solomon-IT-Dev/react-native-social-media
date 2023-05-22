@@ -2,12 +2,22 @@ import { FC, useState } from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 interface ITextInput {
+  name: string
+  onChangeText: (key: string, inputValue: string) => void
+  value: string
   labelText?: string
   placeholderText?: string
   secureTextEntry?: boolean
 }
 
-export const Input: FC<ITextInput> = ({ labelText, placeholderText, secureTextEntry = false }) => {
+export const Input: FC<ITextInput> = ({
+  name,
+  onChangeText,
+  value,
+  labelText,
+  placeholderText,
+  secureTextEntry = false,
+}) => {
   const [isFocused, setIsFocused] = useState(false)
   const [isSecureText, setSecureText] = useState(secureTextEntry)
 
@@ -33,6 +43,8 @@ export const Input: FC<ITextInput> = ({ labelText, placeholderText, secureTextEn
           placeholderTextColor="#BDBDBD"
           onFocus={handleFocus}
           onBlur={handleBlur}
+          value={value}
+          onChangeText={(inputValue) => onChangeText(name, inputValue)}
           secureTextEntry={isSecureText}
         />
         {secureTextEntry && (

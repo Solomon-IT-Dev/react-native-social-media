@@ -3,11 +3,12 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 interface IButton {
   title: string
+  onPress: () => void
   disabled?: boolean
 }
 
-export const Button: FC<IButton> = ({ title, disabled = false }) => (
-  <TouchableOpacity activeOpacity={0.8} disabled={disabled} style={styles.button}>
+export const Button: FC<IButton> = ({ title, onPress, disabled = false }) => (
+  <TouchableOpacity activeOpacity={0.8} onPress={() => onPress()} disabled={disabled} style={styles.button}>
     <Text style={styles.title}>{title}</Text>
   </TouchableOpacity>
 )

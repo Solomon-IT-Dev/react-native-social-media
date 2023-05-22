@@ -1,18 +1,30 @@
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
+import useForm from 'features/signUpForm/lib/useForm'
+
 import { Button, Input } from 'shared'
 
-export const SignUpForm: FC = () => (
-  <View style={styles.form}>
-    <View style={styles.container}>
-      <Input placeholderText="Login" />
-      <Input placeholderText="Email" />
-      <Input placeholderText="Password" secureTextEntry />
+export const SignUpForm: FC = () => {
+  const { formState, handleChangeText, handleSubmit, allowSubmit } = useForm()
+
+  return (
+    <View style={styles.form}>
+      <View style={styles.container}>
+        <Input placeholderText="Login" name="login" onChangeText={handleChangeText} value={formState.login} />
+        <Input placeholderText="Email" name="email" onChangeText={handleChangeText} value={formState.email} />
+        <Input
+          placeholderText="Password"
+          name="password"
+          onChangeText={handleChangeText}
+          value={formState.password}
+          secureTextEntry
+        />
+      </View>
+      <Button title="Sign up" onPress={handleSubmit} disabled={allowSubmit} />
     </View>
-    <Button title="Sign up" />
-  </View>
-)
+  )
+}
 
 const styles = StyleSheet.create({
   form: {
