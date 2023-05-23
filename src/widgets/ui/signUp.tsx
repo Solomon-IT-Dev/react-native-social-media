@@ -2,13 +2,17 @@ import { FC } from 'react'
 import { StyleSheet } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-import { EntryPageSwitch, SignUpForm, UserAvatar } from 'features'
+import { EntryPageEnum, EntryPageSwitch, SignUpForm, UserAvatar } from 'features'
 
 import { SignUpCard } from 'entities'
 
 export const SignUp: FC = () => (
   <KeyboardAwareScrollView contentContainerStyle={styles.container}>
-    <SignUpCard avatar={<UserAvatar />} form={<SignUpForm />} pageSwitch={<EntryPageSwitch />} />
+    <SignUpCard
+      avatar={<UserAvatar />}
+      form={<SignUpForm />}
+      pageSwitch={<EntryPageSwitch entryPage={EntryPageEnum.SignUp} />}
+    />
   </KeyboardAwareScrollView>
 )
 

@@ -3,15 +3,25 @@ import { StyleSheet, View } from 'react-native'
 
 import { Paragraph, TextButton, TextHeightEnum, TextSizeEnum } from 'shared'
 
-export const EntryPageSwitch: FC = () => (
+export enum EntryPageEnum {
+  SignUp,
+  LogIn,
+}
+
+export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum }> = ({ entryPage }) => (
   <View style={styles.container}>
     <Paragraph
-      text="Already have an account?"
+      text={entryPage === EntryPageEnum.SignUp ? 'Already have an account?' : 'Do not have an account?'}
       textSize={TextSizeEnum.LARGE}
       textHeight={TextHeightEnum.LARGE}
       color="#1B4371"
     />
-    <TextButton title="Sign in" textSize={TextSizeEnum.LARGE} textHeight={TextHeightEnum.LARGE} color="#1B4371" />
+    <TextButton
+      title={entryPage === EntryPageEnum.SignUp ? 'Log In' : 'Sign Up'}
+      textSize={TextSizeEnum.LARGE}
+      textHeight={TextHeightEnum.LARGE}
+      color="#1B4371"
+    />
   </View>
 )
 
