@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   title: {
+    fontFamily: 'Raleway-Regular',
     fontWeight: '400',
     fontSize: 16,
     lineHeight: 18,

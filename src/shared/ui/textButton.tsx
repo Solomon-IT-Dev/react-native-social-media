@@ -21,6 +21,7 @@ export const TextButton: FC<ITextButton> = ({
   <TouchableOpacity activeOpacity={0.6} disabled={disabled}>
     <Text
       style={{
+        fontFamily: 'Raleway-Regular',
         fontWeight: '400',
         fontSize: textSize,
         lineHeight: textHeight,

@@ -18,6 +18,7 @@ export const Paragraph: FC<IParagraph> = ({
 }) => (
   <Text
     style={{
+      fontFamily: 'Raleway-Regular',
       fontWeight: '400',
       fontSize: textSize,
       lineHeight: textHeight,

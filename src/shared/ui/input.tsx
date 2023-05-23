@@ -60,6 +60,7 @@ export const Input: FC<ITextInput> = ({
 const styles = StyleSheet.create({
   inputLabel: {
     marginBottom: 8,
+    fontFamily: 'Raleway-Regular',
     fontWeight: '400',
     fontSize: 18,
     lineHeight: 24,
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
   input: {
     height: 52,
     padding: 16,
+    fontFamily: 'Raleway-Regular',
     fontWeight: '400',
     fontSize: 16,
     lineHeight: 20,
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
     padding: 16.5,
   },
   toggleButtonText: {
+    fontFamily: 'Raleway-Regular',
     fontWeight: '400',
     fontSize: 16,
     lineHeight: 19,

@@ -5,6 +5,7 @@ export const Title: FC<{ text: string }> = ({ text }) => <Text style={styles.tit
 
 const styles = StyleSheet.create({
   title: {
+    fontFamily: 'Raleway-Medium',
     fontWeight: '500',
     fontSize: 30,
     lineHeight: 35,
