@@ -1,17 +1,16 @@
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import useForm from 'features/signUpForm/lib/useForm'
+import useForm from 'features/logInForm/lib/useForm'
 
 import { Button, Input } from 'shared'
 
-export const SignUpForm: FC = () => {
+export const LogInForm: FC = () => {
   const { formState, handleChangeText, handleSubmit, allowSubmit } = useForm()
 
   return (
     <View style={styles.form}>
       <View style={styles.container}>
-        <Input placeholderText="Login" name="login" onChangeText={handleChangeText} value={formState.login} />
         <Input placeholderText="Email" name="email" onChangeText={handleChangeText} value={formState.email} />
         <Input
           placeholderText="Password"
@@ -21,7 +20,7 @@ export const SignUpForm: FC = () => {
           secureTextEntry
         />
       </View>
-      <Button title="Sign Up" onPress={handleSubmit} disabled={!allowSubmit} />
+      <Button title="Log In" onPress={handleSubmit} disabled={!allowSubmit} />
     </View>
   )
 }

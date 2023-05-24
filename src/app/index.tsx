@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 import { View } from 'react-native'
 
-import { SignUpScreen } from 'pages'
+import { LogInPage, SignUpScreen } from 'pages'
 
 import { Logo } from 'shared'
 
@@ -28,7 +28,8 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      <SignUpScreen />
+      {/* <SignUpScreen /> */}
+      <LogInPage />
     </View>
   )
 }
