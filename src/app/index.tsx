@@ -28,8 +28,8 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      {/* <SignUpScreen /> */}
-      <LogInPage />
+      <SignUpScreen />
+      {/* <LogInPage /> */}
     </View>
   )
 }
