@@ -8,7 +8,10 @@ export enum EntryPageEnum {
   LogIn,
 }
 
-export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum }> = ({ entryPage }) => (
+export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum; navigateTo: () => void }> = ({
+  entryPage,
+  navigateTo,
+}) => (
   <View style={styles.container}>
     <Paragraph
       text={entryPage === EntryPageEnum.SignUp ? 'Already have an account?' : 'Do not have an account?'}
@@ -18,6 +21,7 @@ export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum }> = ({ entryPage })
     />
     <TextButton
       title={entryPage === EntryPageEnum.SignUp ? 'Log In' : 'Sign Up'}
+      onPress={navigateTo}
       textSize={TextSizeEnum.LARGE}
       textHeight={TextHeightEnum.LARGE}
       color="#1B4371"

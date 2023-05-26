@@ -10,9 +10,12 @@ export * from './ui/title'
 
 // ./types
 export * from './types/app'
-export * from './types/avatar'
+export * from './types/image'
 export * from './types/text'
 
 // ./icons
 export * from './assets/icons/add'
 export * from './assets/icons/remove'
+
+// misc
+export * from './routes'

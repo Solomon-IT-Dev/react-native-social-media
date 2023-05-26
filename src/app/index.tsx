@@ -1,11 +1,10 @@
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
-import { View } from 'react-native'
 
-import { LogInPage, SignUpScreen } from 'pages'
+import { Background, Logo } from 'shared'
 
-import { Logo } from 'shared'
+import { Routing } from './routes'
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -23,15 +22,14 @@ const App = () => {
   }, [])
 
   if (!fontsLoaded) {
-    return <Logo />
+    return (
+      <Background>
+        <Logo />
+      </Background>
+    )
   } else SplashScreen.hideAsync()
 
-  return (
-    <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      <SignUpScreen />
-      {/* <LogInPage /> */}
-    </View>
-  )
+  return <Routing />
 }
 
 export default App

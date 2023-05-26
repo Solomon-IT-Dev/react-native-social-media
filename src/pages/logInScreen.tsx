@@ -4,7 +4,7 @@ import { LogIn } from 'widgets'
 
 import { Background } from 'shared'
 
-export const LogInPage: FC = () => (
+export const LogInScreen: FC = () => (
   <Background>
     <LogIn />
   </Background>
