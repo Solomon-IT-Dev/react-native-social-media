@@ -3,6 +3,9 @@ import type { NativeStackNavigationProp, NativeStackScreenProps } from '@react-n
 export type RootStackParamList = {
   LogIn: undefined
   SignUp: undefined
+  Posts: undefined
+  Create: undefined
+  Profile: undefined
 }
 
 export type NavProp<Screen extends keyof RootStackParamList> = NativeStackNavigationProp<RootStackParamList, Screen>

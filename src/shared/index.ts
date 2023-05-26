@@ -14,8 +14,7 @@ export * from './types/image'
 export * from './types/text'
 
 // ./icons
-export * from './assets/icons/add'
-export * from './assets/icons/remove'
+export * from './assets/icons/plusCircle'
 
 // misc
 export * from './routes'

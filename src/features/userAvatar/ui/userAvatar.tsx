@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 
-import { AddIcon, Avatar, AvatarSizeEnum, RemoveIcon } from 'shared'
+import { Avatar, AvatarSizeEnum, PlusCircleIcon } from 'shared'
 
 export const UserAvatar: FC = () => (
   <View style={styles.userAvatarContainer}>
     <Avatar size={AvatarSizeEnum.NORMAL} />
     <TouchableOpacity activeOpacity={0.6} style={styles.actionButton}>
-      <AddIcon />
+      <PlusCircleIcon color="#FF6C00" />
     </TouchableOpacity>
   </View>
 )
