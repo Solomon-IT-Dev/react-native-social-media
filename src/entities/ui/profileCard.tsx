@@ -7,7 +7,7 @@ interface IProfileCard {
   avatar: ReactElement
   profileAction: ReactElement
   userName: string
-  content: ReactElement | null
+  content: ReactElement
 }
 
 export const ProfileCard: FC<IProfileCard> = ({ avatar, profileAction, userName, content = null }) => (
@@ -18,7 +18,7 @@ export const ProfileCard: FC<IProfileCard> = ({ avatar, profileAction, userName,
       <View style={styles.titleContainer}>
         <Title text={userName} textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
       </View>
-      <ScrollView>{content}</ScrollView>
+      <View>{content}</View>
     </View>
   </View>
 )
@@ -32,11 +32,10 @@ const styles = StyleSheet.create({
     transform: [{ translateY: 60 }],
   },
   cardContainer: {
-    //   marginTop: 200,
-    // marginBottom: -360,
+    marginBottom: -330,
     paddingTop: 22,
     paddingHorizontal: 16,
-    paddingBottom: 32,
+    paddingBottom: 362,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#FFFFFF',
