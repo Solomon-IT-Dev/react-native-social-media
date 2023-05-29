@@ -15,15 +15,15 @@ export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum; navigateTo: () => v
   <View style={styles.container}>
     <Paragraph
       text={entryPage === EntryPageEnum.SignUp ? 'Already have an account?' : 'Do not have an account?'}
-      textSize={TextSizeEnum.LARGE}
-      textHeight={TextHeightEnum.LARGE}
+      textSize={TextSizeEnum.L}
+      textHeight={TextHeightEnum.L}
       color="#1B4371"
     />
     <TextButton
       title={entryPage === EntryPageEnum.SignUp ? 'Log In' : 'Sign Up'}
       onPress={navigateTo}
-      textSize={TextSizeEnum.LARGE}
-      textHeight={TextHeightEnum.LARGE}
+      textSize={TextSizeEnum.L}
+      textHeight={TextHeightEnum.L}
       color="#1B4371"
     />
   </View>

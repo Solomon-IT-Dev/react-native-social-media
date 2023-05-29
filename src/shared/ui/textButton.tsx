@@ -15,8 +15,8 @@ interface ITextButton {
 export const TextButton: FC<ITextButton> = ({
   title,
   onPress,
-  textSize = TextSizeEnum.MEDIUM,
-  textHeight = TextHeightEnum.MEDIUM,
+  textSize = TextSizeEnum.M,
+  textHeight = TextHeightEnum.M,
   color = '#212121',
   disabled = false,
 }) => (

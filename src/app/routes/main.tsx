@@ -5,6 +5,8 @@ import { StyleSheet, View } from 'react-native'
 
 import { CreatePostsScreen, PostsScreen, ProfileScreen } from 'pages'
 
+import { LogOutButton, Title } from 'shared'
+
 const MainTab = createBottomTabNavigator()
 
 export const MainRoutes: FC = () => (
@@ -18,13 +20,16 @@ export const MainRoutes: FC = () => (
       name="Posts"
       component={PostsScreen}
       options={{
-        tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#000000a5' : color} />,
+        headerTitle: () => <Title text="Posts" />,
+        headerRight: () => <LogOutButton />,
+        tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#1B4371' : color} />,
       }}
     />
     <MainTab.Screen
       name="Create"
       component={CreatePostsScreen}
       options={{
+        headerTitle: () => <Title text="Create Post" />,
         tabBarIcon: () => (
           <View
             style={{
@@ -45,7 +50,8 @@ export const MainRoutes: FC = () => (
       name="Profile"
       component={ProfileScreen}
       options={{
-        tabBarIcon: ({ focused, color }) => <Feather name="user" size={24} color={focused ? '#000000a5' : color} />,
+        headerShown: false,
+        tabBarIcon: ({ focused, color }) => <Feather name="user" size={24} color={focused ? '#1B4371' : color} />,
       }}
     />
   </MainTab.Navigator>
@@ -55,9 +61,5 @@ const styles = StyleSheet.create({
   tabBar: {
     height: 84,
     paddingHorizontal: 56,
-    shadowOffset: { width: 0, height: -0.5 },
-    shadowRadius: 0,
-    shadowOpacity: 0.3,
-    shadowColor: '#000000',
   },
 })

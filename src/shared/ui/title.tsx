@@ -1,15 +1,24 @@
 import { FC } from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native'
 
-export const Title: FC<{ text: string }> = ({ text }) => <Text style={styles.title}>{text}</Text>
+import { TitleHeightEnum, TitleSizeEnum } from 'shared/types/text'
 
-const styles = StyleSheet.create({
-  title: {
-    fontFamily: 'Raleway-Medium',
-    fontWeight: '500',
-    fontSize: 30,
-    lineHeight: 35,
-    textAlign: 'center',
-    letterSpacing: 0.01,
-  },
-})
+interface ITitle {
+  text: string
+  textSize?: TitleSizeEnum
+  textHeight?: TitleHeightEnum
+}
+
+export const Title: FC<ITitle> = ({ text, textSize = TitleSizeEnum.M, textHeight = TitleHeightEnum.M }) => (
+  <Text
+    style={{
+      fontFamily: textSize === TitleSizeEnum.XS ? 'Raleway-Bold' : 'Raleway-Medium',
+      fontWeight: textSize === TitleSizeEnum.XS ? '700' : '500',
+      fontSize: textSize,
+      lineHeight: textHeight,
+      textAlign: 'center',
+    }}
+  >
+    {text}
+  </Text>
+)

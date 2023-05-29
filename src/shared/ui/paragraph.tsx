@@ -12,8 +12,8 @@ interface IParagraph {
 
 export const Paragraph: FC<IParagraph> = ({
   text,
-  textSize = TextSizeEnum.MEDIUM,
-  textHeight = TextHeightEnum.MEDIUM,
+  textSize = TextSizeEnum.M,
+  textHeight = TextHeightEnum.M,
   color = '#212121',
 }) => (
   <Text
