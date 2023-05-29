@@ -1,5 +1,6 @@
 // ./ui
 export * from './ui/avatar'
+export * from './ui/backButton'
 export * from './ui/background'
 export * from './ui/button'
 export * from './ui/input'

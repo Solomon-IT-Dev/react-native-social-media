@@ -2,17 +2,17 @@ import { Feather } from '@expo/vector-icons'
 import { FC } from 'react'
 import { Pressable } from 'react-native'
 
-interface ILogOutButton {
+interface IBackButton {
   //   onPress: () => void
   color?: string
 }
 
-export const LogOutButton: FC<ILogOutButton> = ({ color }) => (
+export const BackButton: FC<IBackButton> = ({ color }) => (
   <Pressable
     style={{
-      marginRight: 16,
+      marginLeft: 16,
     }}
   >
-    <Feather name="log-out" size={24} color={color ? color : '#BDBDBD'} />
+    <Feather name="arrow-left" size={24} color={color ? color : '#212121cc'} />
   </Pressable>
 )

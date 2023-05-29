@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native'
 
 import { CreatePostsScreen, PostsScreen, ProfileScreen } from 'pages'
 
-import { LogOutButton, Title } from 'shared'
+import { BackButton, LogOutButton, Title } from 'shared'
 
 const MainTab = createBottomTabNavigator()
 
@@ -30,6 +30,7 @@ export const MainRoutes: FC = () => (
       component={CreatePostsScreen}
       options={{
         headerTitle: () => <Title text="Create Post" />,
+        headerLeft: () => <BackButton />,
         tabBarIcon: () => (
           <View
             style={{
