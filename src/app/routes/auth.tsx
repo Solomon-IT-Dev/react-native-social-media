@@ -3,19 +3,23 @@ import { FC } from 'react'
 
 import { LogInScreen, SignUpScreen } from 'pages'
 
+import { Background } from 'shared'
+
 const AuthStack = createNativeStackNavigator()
 
 export const AuthRoutes: FC = () => (
-  <AuthStack.Navigator>
-    <AuthStack.Screen
-      name="LogIn"
-      component={LogInScreen}
-      options={{ headerShown: false, gestureDirection: 'vertical' }}
-    />
-    <AuthStack.Screen
-      name="SignUp"
-      component={SignUpScreen}
-      options={{ headerShown: false, gestureDirection: 'vertical' }}
-    />
-  </AuthStack.Navigator>
+  <Background>
+    <AuthStack.Navigator screenOptions={{ contentStyle: { backgroundColor: 'transparent' } }}>
+      <AuthStack.Screen
+        name="Log In"
+        component={LogInScreen}
+        options={{ headerShown: false, gestureDirection: 'vertical' }}
+      />
+      <AuthStack.Screen
+        name="Sign Up"
+        component={SignUpScreen}
+        options={{ headerShown: false, gestureDirection: 'vertical' }}
+      />
+    </AuthStack.Navigator>
+  </Background>
 )

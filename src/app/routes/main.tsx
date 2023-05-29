@@ -26,7 +26,7 @@ export const MainRoutes: FC = () => (
       }}
     />
     <MainTab.Screen
-      name="Create"
+      name="Create Post"
       component={CreatePostsScreen}
       options={{
         headerTitle: () => <Title text="Create Post" />,
