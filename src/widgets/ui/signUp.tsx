@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { StyleSheet } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-import { EntryPageEnum, EntryPageSwitch, SignUpForm, UserAvatar } from 'features'
+import { EntryPageEnum, EntryPageSwitch, SignUpForm, UserAvatarEditor } from 'features'
 
 import { SignUpCard } from 'entities'
 
@@ -19,7 +19,7 @@ export const SignUp: FC = () => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.container}>
       <SignUpCard
-        avatar={<UserAvatar />}
+        avatar={<UserAvatarEditor />}
         form={<SignUpForm />}
         pageSwitch={<EntryPageSwitch entryPage={EntryPageEnum.SignUp} navigateTo={navigateToSignUpScreen} />}
       />

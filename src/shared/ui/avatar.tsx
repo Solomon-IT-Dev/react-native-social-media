@@ -4,7 +4,7 @@ import { Image, StyleSheet, View } from 'react-native'
 import { AvatarSizeEnum } from 'shared'
 
 interface IAvatar {
-  src?: string
+  src?: string | null | undefined
   size?: AvatarSizeEnum
 }
 
@@ -16,6 +16,7 @@ export const Avatar: FC<IAvatar> = ({ src, size = AvatarSizeEnum.NORMAL }) => (
       style={{
         width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
         height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
+        resizeMode: 'cover',
       }}
     />
   </View>

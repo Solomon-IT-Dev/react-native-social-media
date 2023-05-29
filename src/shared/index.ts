@@ -8,6 +8,9 @@ export * from './ui/paragraph'
 export * from './ui/textButton'
 export * from './ui/title'
 
+// ./lib
+export * from './lib/useImagePicker'
+
 // ./types
 export * from './types/app'
 export * from './types/image'
