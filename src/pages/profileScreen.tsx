@@ -1,10 +1,11 @@
 import { FC } from 'react'
-import { StyleSheet, View } from 'react-native'
 
-import { Background, Title } from 'shared'
+import { Profile } from 'widgets'
+
+import { Background } from 'shared'
 
 export const ProfileScreen: FC = () => (
   <Background>
-    <Title text="Profile" />
+    <Profile />
   </Background>
 )

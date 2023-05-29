@@ -11,12 +11,12 @@ export const AuthRoutes: FC = () => (
   <Background>
     <AuthStack.Navigator screenOptions={{ contentStyle: { backgroundColor: 'transparent' } }}>
       <AuthStack.Screen
-        name="Log In"
+        name="LogIn"
         component={LogInScreen}
         options={{ headerShown: false, gestureDirection: 'vertical' }}
       />
       <AuthStack.Screen
-        name="Sign Up"
+        name="SignUp"
         component={SignUpScreen}
         options={{ headerShown: false, gestureDirection: 'vertical' }}
       />

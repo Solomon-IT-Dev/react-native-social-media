@@ -23,19 +23,19 @@ export const SignUpCard: FC<ISignUpCard> = ({ avatar, form, pageSwitch }) => (
 )
 
 const styles = StyleSheet.create({
+  avatarContainer: {
+    zIndex: 3,
+    marginHorizontal: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transform: [{ translateY: 60 }],
+  },
   cardContainer: {
     paddingTop: 92,
     paddingHorizontal: 16,
     paddingBottom: 78,
     borderRadius: 25,
     backgroundColor: '#fff',
-  },
-  avatarContainer: {
-    zIndex: 3,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    transform: [{ translateY: 60 }],
   },
   titleContainer: {
     marginBottom: 32,

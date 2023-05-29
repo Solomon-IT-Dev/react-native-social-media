@@ -5,7 +5,9 @@ import { StyleSheet, View } from 'react-native'
 
 import { CreatePostsScreen, PostsScreen, ProfileScreen } from 'pages'
 
-import { BackButton, LogOutButton, Title } from 'shared'
+import { GoBack, LogOut } from 'features'
+
+import { Title } from 'shared'
 
 const MainTab = createBottomTabNavigator()
 
@@ -21,16 +23,16 @@ export const MainRoutes: FC = () => (
       component={PostsScreen}
       options={{
         headerTitle: () => <Title text="Posts" />,
-        headerRight: () => <LogOutButton />,
+        headerRight: () => <LogOut style={{ marginRight: 16 }} />,
         tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#1B4371' : color} />,
       }}
     />
     <MainTab.Screen
-      name="Create Post"
+      name="Create"
       component={CreatePostsScreen}
       options={{
         headerTitle: () => <Title text="Create Post" />,
-        headerLeft: () => <BackButton />,
+        headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
         tabBarIcon: () => (
           <View
             style={{

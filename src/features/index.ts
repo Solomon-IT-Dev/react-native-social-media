@@ -1,4 +1,6 @@
-export * from './entryPageSwitch'
 export * from './logInForm'
 export * from './signUpForm'
+export * from './entryPageSwitch'
+export * from './logOut'
+export * from './goBack'
 export * from './userAvatarPicker'
