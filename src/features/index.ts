@@ -1,4 +1,4 @@
 export * from './entryPageSwitch'
 export * from './logInForm'
 export * from './signUpForm'
-export * from './userAvatarEditor'
+export * from './userAvatarPicker'

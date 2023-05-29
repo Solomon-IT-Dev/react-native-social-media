@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native'
 
 import { Avatar, AvatarSizeEnum, PlusCircleIcon, useImagePicker } from 'shared'
 
-export const UserAvatarEditor: FC = () => {
+export const UserAvatarPicker: FC = () => {
   const { pickedImage, setPickedImage, takeImageHandler } = useImagePicker()
 
   const removeImage = () => {
