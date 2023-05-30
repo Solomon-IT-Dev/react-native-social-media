@@ -47,6 +47,7 @@ export const MainRoutes: FC = () => (
             <Feather name="plus" size={18} color="#FFFFFF" />
           </View>
         ),
+        tabBarStyle: { display: 'none' },
       }}
     />
     <MainTab.Screen

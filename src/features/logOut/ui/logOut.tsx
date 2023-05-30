@@ -8,12 +8,10 @@ interface ILogOut {
   style?: StyleProp<ViewStyle>
 }
 
-// const { navigate } = useNavigation<NavProp<'Posts'>>()
+export const LogOut: FC<ILogOut> = ({ style }) => {
+  const handelLogOut = () => {
+    console.log('Log Out')
+  }
 
-// const navigateToSignUpScreen = () => {
-//   navigate('LogIn')
-// }
-
-export const LogOut: FC<ILogOut> = ({ style }) => (
-  <IconButton icon={<Feather name="log-out" size={24} color="#BDBDBD" />} style={style} />
-)
+  return <IconButton icon={<Feather name="log-out" size={24} color="#BDBDBD" />} onPress={handelLogOut} style={style} />
+}

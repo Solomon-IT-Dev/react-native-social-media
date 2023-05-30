@@ -7,10 +7,10 @@ import { EntryPageEnum, EntryPageSwitch, SignUpForm, UserAvatarPicker } from 'fe
 
 import { SignUpCard } from 'entities'
 
-import type { NavProp } from 'shared'
+import type { NavProp, RootStackParamList } from 'shared'
 
 export const SignUp: FC = () => {
-  const { navigate } = useNavigation<NavProp<'SignUp'>>()
+  const { navigate } = useNavigation<NavProp<keyof RootStackParamList>>()
 
   const navigateToSignUpScreen = () => {
     navigate('LogIn')
