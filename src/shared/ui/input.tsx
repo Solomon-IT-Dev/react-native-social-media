@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardTypeOptions, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 interface ITextInput {
   name: string
@@ -7,6 +7,7 @@ interface ITextInput {
   value: string
   labelText?: string
   placeholderText?: string
+  keyboardType?: KeyboardTypeOptions
   secureTextEntry?: boolean
 }
 
@@ -16,6 +17,7 @@ export const Input: FC<ITextInput> = ({
   value,
   labelText,
   placeholderText,
+  keyboardType,
   secureTextEntry = false,
 }) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -39,6 +41,7 @@ export const Input: FC<ITextInput> = ({
       <View style={styles.container}>
         <TextInput
           style={[styles.input, isFocused && styles.inputFocused]}
+          keyboardType={keyboardType}
           placeholder={placeholderText}
           placeholderTextColor="#BDBDBD"
           onFocus={handleFocus}

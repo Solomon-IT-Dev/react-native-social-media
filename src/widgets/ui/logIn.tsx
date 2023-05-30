@@ -17,7 +17,7 @@ export const LogIn: FC = () => {
   }
 
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
+    <KeyboardAwareScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.container}>
       <LogInCard
         form={<LogInForm />}
         pageSwitch={<EntryPageSwitch entryPage={EntryPageEnum.LogIn} navigateTo={navigateToSignUpScreen} />}

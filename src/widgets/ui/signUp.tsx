@@ -17,7 +17,7 @@ export const SignUp: FC = () => {
   }
 
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
+    <KeyboardAwareScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.container}>
       <SignUpCard
         avatar={<UserAvatarPicker />}
         form={<SignUpForm />}

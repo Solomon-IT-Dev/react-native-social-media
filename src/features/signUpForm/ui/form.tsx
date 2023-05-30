@@ -12,7 +12,13 @@ export const SignUpForm: FC = () => {
     <View style={styles.form}>
       <View style={styles.container}>
         <Input placeholderText="Login" name="login" onChangeText={handleChangeText} value={formState.login} />
-        <Input placeholderText="Email" name="email" onChangeText={handleChangeText} value={formState.email} />
+        <Input
+          placeholderText="Email"
+          name="email"
+          onChangeText={handleChangeText}
+          value={formState.email}
+          keyboardType="email-address"
+        />
         <Input
           placeholderText="Password"
           name="password"

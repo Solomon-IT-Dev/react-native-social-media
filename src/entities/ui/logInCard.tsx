@@ -22,10 +22,12 @@ export const LogInCard: FC<ILogInCard> = ({ form, pageSwitch }) => (
 
 const styles = StyleSheet.create({
   cardContainer: {
+    marginBottom: -330,
     paddingTop: 32,
     paddingHorizontal: 16,
-    paddingBottom: 144,
-    borderRadius: 25,
+    paddingBottom: 474,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     backgroundColor: '#fff',
   },
   titleContainer: {

@@ -11,12 +11,19 @@ export const LogInForm: FC = () => {
   return (
     <View style={styles.form}>
       <View style={styles.container}>
-        <Input placeholderText="Email" name="email" onChangeText={handleChangeText} value={formState.email} />
+        <Input
+          placeholderText="Email"
+          name="email"
+          onChangeText={handleChangeText}
+          value={formState.email}
+          keyboardType="email-address"
+        />
         <Input
           placeholderText="Password"
           name="password"
           onChangeText={handleChangeText}
           value={formState.password}
+          keyboardType="visible-password"
           secureTextEntry
         />
       </View>

@@ -31,10 +31,12 @@ const styles = StyleSheet.create({
     transform: [{ translateY: 60 }],
   },
   cardContainer: {
+    marginBottom: -330,
     paddingTop: 92,
     paddingHorizontal: 16,
-    paddingBottom: 78,
-    borderRadius: 25,
+    paddingBottom: 408,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     backgroundColor: '#fff',
   },
   titleContainer: {
