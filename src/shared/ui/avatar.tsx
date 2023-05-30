@@ -9,14 +9,20 @@ interface IAvatar {
 }
 
 export const Avatar: FC<IAvatar> = ({ src, size = AvatarSizeEnum.NORMAL }) => (
-  <View style={styles.avatarContainer}>
+  <View
+    style={{
+      ...styles.avatarContainer,
+      width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
+      height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
+    }}
+  >
     <Image
       alt="User avatar"
       source={src ? { uri: src } : require('shared/assets/images/avatar-placeholder.png')}
       style={{
+        resizeMode: 'cover',
         width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
         height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
-        resizeMode: 'cover',
       }}
     />
   </View>

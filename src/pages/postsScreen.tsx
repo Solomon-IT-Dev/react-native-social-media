@@ -1,19 +1,20 @@
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { Title } from 'shared'
+import { User } from 'widgets'
 
 export const PostsScreen: FC = () => (
   <View style={styles.container}>
-    <Title text="Posts" />
+    <User />
   </View>
 )
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 32,
+    paddingHorizontal: 16,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    gap: 32,
     backgroundColor: '#FFFFFF',
   },
 })

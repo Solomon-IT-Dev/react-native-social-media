@@ -13,7 +13,7 @@ const useRoutes = (isAuth: boolean) => {
 }
 
 export const Routing: FC = () => {
-  const routing = useRoutes(false)
+  const routing = useRoutes(true)
 
   return <NavigationContainer>{routing}</NavigationContainer>
 }
