@@ -14,6 +14,7 @@ export const TitleXS: FC<ITitle> = ({ text, color = '#212121' }) => (
       fontSize: 13,
       lineHeight: 15,
       textAlign: 'center',
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -29,6 +30,7 @@ export const TitleS: FC<ITitle> = ({ text, color = '#212121' }) => (
       fontSize: 16,
       lineHeight: 19,
       textAlign: 'center',
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -44,6 +46,7 @@ export const TitleM: FC<ITitle> = ({ text, color = '#212121' }) => (
       fontSize: 17,
       lineHeight: 22,
       textAlign: 'center',
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -59,6 +62,7 @@ export const TitleL: FC<ITitle> = ({ text, color = '#212121' }) => (
       fontSize: 30,
       lineHeight: 35,
       textAlign: 'center',
+      letterSpacing: -0.4,
       color: color,
     }}
   >

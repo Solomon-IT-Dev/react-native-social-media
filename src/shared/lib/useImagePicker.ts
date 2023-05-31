@@ -38,5 +38,9 @@ export const useImagePicker = () => {
     setPickedImage(image.assets)
   }
 
-  return { pickedImage, setPickedImage, takeImageHandler }
+  const removeImage = () => {
+    setPickedImage(null)
+  }
+
+  return { pickedImage, setPickedImage, takeImageHandler, removeImage }
 }

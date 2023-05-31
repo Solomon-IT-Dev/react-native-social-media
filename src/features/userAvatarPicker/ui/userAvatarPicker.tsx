@@ -4,11 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native'
 import { Avatar, AvatarSizeEnum, PlusCircleIcon, useImagePicker } from 'shared'
 
 export const UserAvatarPicker: FC = () => {
-  const { pickedImage, setPickedImage, takeImageHandler } = useImagePicker()
-
-  const removeImage = () => {
-    setPickedImage(null)
-  }
+  const { pickedImage, setPickedImage, takeImageHandler, removeImage } = useImagePicker()
 
   return (
     <View style={styles.userAvatarContainer}>

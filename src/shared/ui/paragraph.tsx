@@ -13,6 +13,7 @@ export const ParagraphXS: FC<IParagraph> = ({ text, color = '#212121' }) => (
       fontWeight: '400',
       fontSize: 10,
       lineHeight: 12,
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -27,6 +28,7 @@ export const ParagraphS: FC<IParagraph> = ({ text, color = '#212121' }) => (
       fontWeight: '400',
       fontSize: 11,
       lineHeight: 13,
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -41,6 +43,7 @@ export const ParagraphM: FC<IParagraph> = ({ text, color = '#212121' }) => (
       fontWeight: '400',
       fontSize: 13,
       lineHeight: 18,
+      letterSpacing: -0.1,
       color: color,
     }}
   >
@@ -55,6 +58,7 @@ export const ParagraphL: FC<IParagraph> = ({ text, color = '#212121' }) => (
       fontWeight: '400',
       fontSize: 16,
       lineHeight: 19,
+      letterSpacing: -0.1,
       color: color,
     }}
   >

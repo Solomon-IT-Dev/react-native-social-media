@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     maxWidth: 425,
     width: '100%',
     height: 240,
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 8,
+    overflow: 'hidden',
   },
 })
