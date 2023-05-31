@@ -1,20 +1,20 @@
 import { FC } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 
-import { User } from 'widgets'
+import { PostCreator } from 'widgets'
 
-export const PostsScreen: FC = () => (
+export const CreatePostScreen: FC = () => (
   <ScrollView style={styles.container}>
-    <User />
+    <PostCreator />
   </ScrollView>
 )
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 32,
+    paddingBottom: 34,
     paddingHorizontal: 16,
     flex: 1,
-    gap: 32,
     backgroundColor: '#FFFFFF',
   },
 })

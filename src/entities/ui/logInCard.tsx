@@ -9,14 +9,12 @@ interface ILogInCard {
 }
 
 export const LogInCard: FC<ILogInCard> = ({ form, pageSwitch }) => (
-  <View>
-    <View style={styles.cardContainer}>
-      <View style={styles.titleContainer}>
-        <Title text="Log In" textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
-      </View>
-      <View>{form}</View>
-      <View style={styles.pageSwitchContainer}>{pageSwitch}</View>
+  <View style={styles.cardContainer}>
+    <View style={styles.titleContainer}>
+      <Title text="Log In" textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
     </View>
+    <View>{form}</View>
+    <View style={styles.pageSwitchContainer}>{pageSwitch}</View>
   </View>
 )
 

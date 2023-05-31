@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { CreatePostsScreen, PostsScreen, ProfileScreen } from 'pages'
+import { CreatePostScreen, PostsScreen, ProfileScreen } from 'pages'
 
 import { GoBack, LogOut } from 'features'
 
@@ -29,7 +29,7 @@ export const MainRoutes: FC = () => (
     />
     <MainTab.Screen
       name="Create"
-      component={CreatePostsScreen}
+      component={CreatePostScreen}
       options={{
         headerTitle: () => <Title text="Create Post" />,
         headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
