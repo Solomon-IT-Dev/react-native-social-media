@@ -1,13 +1,11 @@
 import { FC } from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 
-import { TextHeightEnum, TextSizeEnum } from 'shared/types/text'
-
 interface ITextButton {
   title: string
   onPress: () => void
-  textSize?: TextSizeEnum
-  textHeight?: TextHeightEnum
+  textSize?: number
+  textHeight?: number
   color?: string
   disabled?: boolean
 }
@@ -15,9 +13,9 @@ interface ITextButton {
 export const TextButton: FC<ITextButton> = ({
   title,
   onPress,
-  textSize = TextSizeEnum.M,
-  textHeight = TextHeightEnum.M,
-  color = '#212121',
+  textSize = 16,
+  textHeight = 19,
+  color = '#1B4371',
   disabled = false,
 }) => (
   <TouchableOpacity activeOpacity={0.6} onPress={() => onPress()} disabled={disabled}>

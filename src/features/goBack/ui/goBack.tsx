@@ -12,5 +12,5 @@ interface IGoBack {
 export const GoBack: FC<IGoBack> = ({ style }) => {
   const { goBack } = useNavigation<NavProp<keyof RootStackParamList>>()
 
-  return <IconButton icon={<Feather name="arrow-left" size={24} color="#212121cc" />} onPress={goBack} style={style} />
+  return <IconButton icon={<Feather name="arrow-left" size={24} color="#212121CC" />} onPress={goBack} style={style} />
 }

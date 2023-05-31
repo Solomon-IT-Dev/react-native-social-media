@@ -1,6 +1,5 @@
 import { FC } from 'react'
 
-// import { StyleSheet, View } from 'react-native'
 import { UserBox } from 'entities'
 
 // interface IUser {

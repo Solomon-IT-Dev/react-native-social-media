@@ -1,16 +1,7 @@
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import {
-  Avatar,
-  AvatarSizeEnum,
-  Paragraph,
-  TextHeightEnum,
-  TextSizeEnum,
-  Title,
-  TitleHeightEnum,
-  TitleSizeEnum,
-} from 'shared'
+import { Avatar, AvatarSizeEnum, ParagraphS, TitleXS } from 'shared'
 
 interface IUserBox {
   name: string
@@ -25,10 +16,10 @@ export const UserBox: FC<IUserBox> = ({ name, email, userAvatarSrc }) => (
     </View>
     <View>
       <View style={styles.nameContainer}>
-        <Title text={name} textSize={TitleSizeEnum.XS} textHeight={TitleHeightEnum.XS} />
+        <TitleXS text={name} />
       </View>
       <View style={styles.emailContainer}>
-        <Paragraph text={email} textSize={TextSizeEnum.S} textHeight={TextHeightEnum.S} />
+        <ParagraphS text={email} color="#212121CC" />
       </View>
     </View>
   </View>

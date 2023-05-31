@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { Title, TitleHeightEnum, TitleSizeEnum } from 'shared'
+import { TitleL } from 'shared'
 
 interface ILogInCard {
   form: ReactElement
@@ -11,7 +11,7 @@ interface ILogInCard {
 export const LogInCard: FC<ILogInCard> = ({ form, pageSwitch }) => (
   <View style={styles.cardContainer}>
     <View style={styles.titleContainer}>
-      <Title text="Log In" textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
+      <TitleL text="Log In" />
     </View>
     <View>{form}</View>
     <View style={styles.pageSwitchContainer}>{pageSwitch}</View>

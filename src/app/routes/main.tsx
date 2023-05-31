@@ -7,7 +7,7 @@ import { CreatePostScreen, PostsScreen, ProfileScreen } from 'pages'
 
 import { GoBack, LogOut } from 'features'
 
-import { Title } from 'shared'
+import { TitleM } from 'shared'
 
 const MainTab = createBottomTabNavigator()
 
@@ -22,7 +22,7 @@ export const MainRoutes: FC = () => (
       name="Posts"
       component={PostsScreen}
       options={{
-        headerTitle: () => <Title text="Posts" />,
+        headerTitle: () => <TitleM text="Posts" />,
         headerRight: () => <LogOut style={{ marginRight: 16 }} />,
         tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#1B4371' : color} />,
       }}
@@ -31,7 +31,7 @@ export const MainRoutes: FC = () => (
       name="Create"
       component={CreatePostScreen}
       options={{
-        headerTitle: () => <Title text="Create Post" />,
+        headerTitle: () => <TitleM text="Create Post" />,
         headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
         tabBarIcon: () => (
           <View

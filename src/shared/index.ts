@@ -17,7 +17,6 @@ export * from './lib/useImagePicker'
 // ./types
 export * from './types/app'
 export * from './types/image'
-export * from './types/text'
 
 // ./icons
 export * from './assets/icons/plusCircle'

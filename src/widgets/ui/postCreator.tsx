@@ -3,21 +3,11 @@ import { StyleSheet, View } from 'react-native'
 
 import { PostBox } from 'entities'
 
-import { CameraView, PostImage, Title, TitleHeightEnum, TitleSizeEnum } from 'shared'
+import { CameraView, PostImage, TitleS } from 'shared'
 
 export const PostCreator: FC = () => (
   <View style={styles.container}>
-    <PostBox
-      image={<CameraView></CameraView>}
-      text={
-        <Title
-          text="Take or upload a photo"
-          textSize={TitleSizeEnum.S}
-          textHeight={TitleHeightEnum.S}
-          color="#BDBDBD"
-        />
-      }
-    />
+    <PostBox image={<CameraView></CameraView>} text={<TitleS text="Take or upload a photo" color="#BDBDBD" />} />
   </View>
 )
 

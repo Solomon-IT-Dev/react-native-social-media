@@ -1,27 +1,60 @@
 import { FC } from 'react'
 import { Text } from 'react-native'
 
-import { TextHeightEnum, TextSizeEnum } from 'shared/types/text'
-
 interface IParagraph {
   text: string
-  textSize?: TextSizeEnum
-  textHeight?: TextHeightEnum
   color?: string
 }
 
-export const Paragraph: FC<IParagraph> = ({
-  text,
-  textSize = TextSizeEnum.M,
-  textHeight = TextHeightEnum.M,
-  color = '#212121',
-}) => (
+export const ParagraphXS: FC<IParagraph> = ({ text, color = '#212121' }) => (
   <Text
     style={{
       fontFamily: 'Raleway-Regular',
       fontWeight: '400',
-      fontSize: textSize,
-      lineHeight: textHeight,
+      fontSize: 10,
+      lineHeight: 12,
+      color: color,
+    }}
+  >
+    {text}
+  </Text>
+)
+
+export const ParagraphS: FC<IParagraph> = ({ text, color = '#212121' }) => (
+  <Text
+    style={{
+      fontFamily: 'Raleway-Regular',
+      fontWeight: '400',
+      fontSize: 11,
+      lineHeight: 13,
+      color: color,
+    }}
+  >
+    {text}
+  </Text>
+)
+
+export const ParagraphM: FC<IParagraph> = ({ text, color = '#212121' }) => (
+  <Text
+    style={{
+      fontFamily: 'Raleway-Regular',
+      fontWeight: '400',
+      fontSize: 13,
+      lineHeight: 18,
+      color: color,
+    }}
+  >
+    {text}
+  </Text>
+)
+
+export const ParagraphL: FC<IParagraph> = ({ text, color = '#212121' }) => (
+  <Text
+    style={{
+      fontFamily: 'Raleway-Regular',
+      fontWeight: '400',
+      fontSize: 16,
+      lineHeight: 19,
       color: color,
     }}
   >

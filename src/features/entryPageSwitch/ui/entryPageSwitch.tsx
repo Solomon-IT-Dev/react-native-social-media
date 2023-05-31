@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { Paragraph, TextButton, TextHeightEnum, TextSizeEnum } from 'shared'
+import { ParagraphL, TextButton } from 'shared'
 
 export enum EntryPageEnum {
   SignUp,
@@ -13,19 +13,11 @@ export const EntryPageSwitch: FC<{ entryPage: EntryPageEnum; navigateTo: () => v
   navigateTo,
 }) => (
   <View style={styles.container}>
-    <Paragraph
+    <ParagraphL
       text={entryPage === EntryPageEnum.SignUp ? 'Already have an account?' : 'Do not have an account?'}
-      textSize={TextSizeEnum.L}
-      textHeight={TextHeightEnum.L}
       color="#1B4371"
     />
-    <TextButton
-      title={entryPage === EntryPageEnum.SignUp ? 'Log In' : 'Sign Up'}
-      onPress={navigateTo}
-      textSize={TextSizeEnum.L}
-      textHeight={TextHeightEnum.L}
-      color="#1B4371"
-    />
+    <TextButton title={entryPage === EntryPageEnum.SignUp ? 'Log In' : 'Sign Up'} onPress={navigateTo} />
   </View>
 )
 

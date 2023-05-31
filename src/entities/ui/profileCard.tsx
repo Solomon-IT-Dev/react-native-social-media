@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
-import { Title, TitleHeightEnum, TitleSizeEnum } from 'shared'
+import { TitleL } from 'shared'
 
 interface IProfileCard {
   avatar: ReactElement
@@ -16,7 +16,7 @@ export const ProfileCard: FC<IProfileCard> = ({ avatar, profileAction, userName,
     <View style={styles.cardContainer}>
       <View style={styles.actionContainer}>{profileAction}</View>
       <View style={styles.titleContainer}>
-        <Title text={userName} textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
+        <TitleL text={userName} />
       </View>
       <View>{content}</View>
     </View>

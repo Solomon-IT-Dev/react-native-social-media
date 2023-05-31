@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { Title, TitleHeightEnum, TitleSizeEnum } from 'shared'
+import { TitleL } from 'shared'
 
 interface ISignUpCard {
   avatar: ReactElement
@@ -14,7 +14,7 @@ export const SignUpCard: FC<ISignUpCard> = ({ avatar, form, pageSwitch }) => (
     <View style={styles.avatarContainer}>{avatar}</View>
     <View style={styles.cardContainer}>
       <View style={styles.titleContainer}>
-        <Title text="Sign Up" textSize={TitleSizeEnum.L} textHeight={TitleHeightEnum.L} />
+        <TitleL text="Sign Up" />
       </View>
       <View>{form}</View>
       <View style={styles.pageSwitchContainer}>{pageSwitch}</View>
