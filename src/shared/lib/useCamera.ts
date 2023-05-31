@@ -2,8 +2,8 @@ import { ImagePickerAsset, PermissionStatus, launchCameraAsync, useCameraPermiss
 import { useState } from 'react'
 import { Alert } from 'react-native'
 
-export const useImagePicker = () => {
-  const [pickedImage, setPickedImage] = useState<ImagePickerAsset[] | null>()
+export const useCamera = () => {
+  const [shot, setShot] = useState<ImagePickerAsset[] | null>()
 
   const [cameraPermissionInfo, requestPermission] = useCameraPermissions()
 
@@ -22,7 +22,7 @@ export const useImagePicker = () => {
     return true
   }
 
-  const takeImageHandler = async (aspect?: [number, number], quality?: number) => {
+  const makeShotHandler = async (aspect?: [number, number], quality?: number) => {
     const hasPermission = await verifyPermissions()
 
     if (!hasPermission) {
@@ -35,12 +35,12 @@ export const useImagePicker = () => {
       quality,
     })
 
-    setPickedImage(image.assets)
+    setShot(image.assets)
   }
 
-  const removeImage = () => {
-    setPickedImage(null)
+  const removeShot = () => {
+    setShot(null)
   }
 
-  return { pickedImage, setPickedImage, takeImageHandler, removeImage }
+  return { shot, setShot, makeShotHandler, removeShot }
 }

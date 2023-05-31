@@ -13,7 +13,8 @@ export * from './ui/cameraView'
 export * from './ui/background'
 
 // ./lib
-export * from './lib/useImagePicker'
+export * from './lib/useCamera'
+export * from './lib/useMediaLibrary'
 
 // ./types
 export * from './types/app'
