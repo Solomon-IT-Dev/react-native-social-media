@@ -1,5 +1,4 @@
 import { Ionicons } from '@expo/vector-icons'
-import { ImagePickerAsset } from 'expo-image-picker'
 import { FC, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -11,49 +10,49 @@ import { CameraActionBox, PostBox } from 'entities'
 import { CameraView, PostImage, PostType, RoundButton, TitleS } from 'shared'
 
 const initialState: PostType = {
-  imageUri: null,
+  image: null,
   name: '',
   location: '',
 }
 
 export const PostCreator: FC = () => {
-  const [image, setImage] = useState<ImagePickerAsset[] | null>(null)
+  const [postData, setPostData] = useState(initialState)
 
   return (
     <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
       <View style={styles.container}>
         <PostBox
           image={
-            image ? (
+            postData.image ? (
               <PostImage
-                src={image[0].uri}
-                width={image[0].width}
-                height={image[0].height}
+                src={postData.image[0].uri}
+                width={postData.image[0].width}
+                height={postData.image[0].height}
                 action={
                   <RoundButton
                     icon={<Ionicons name="close-circle" size={24} color="#BDBDBD" />}
-                    onPress={() => setImage(null)}
+                    onPress={() => setPostData((prevState) => ({ ...prevState, image: null }))}
                   />
                 }
               />
             ) : (
               <CameraView>
                 <CameraActionBox
-                  firstAction={<OpenCamera stateAction={setImage} />}
-                  secondAction={<OpenMediaLibrary stateAction={setImage} />}
+                  firstAction={<OpenCamera stateAction={setPostData} />}
+                  secondAction={<OpenMediaLibrary stateAction={setPostData} />}
                 />
               </CameraView>
             )
           }
-          text={<TitleS text={image ? 'Edit photo' : 'Take or upload a photo'} color="#BDBDBD" />}
+          text={<TitleS text={postData.image ? 'Edit photo' : 'Take or upload a photo'} color="#BDBDBD" />}
         />
         <View style={styles.subContainer}>
-          <CreatePostForm />
+          <CreatePostForm initialState={initialState} postData={postData} setPostData={setPostData} />
           <FormCleaner
             onPress={() => {
-              setImage(null)
+              setPostData(initialState)
             }}
-            disabled={!image}
+            disabled={!postData.image}
           />
         </View>
       </View>

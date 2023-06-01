@@ -1,13 +1,17 @@
 import { Feather } from '@expo/vector-icons'
-import { FC } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 import useForm from 'features/createPostForm/lib/useForm'
 
-import { Button, Input, InputStyleEnum } from 'shared'
+import { Button, Input, InputStyleEnum, PostType } from 'shared'
 
-export const CreatePostForm: FC = () => {
-  const { formState, handleChangeText, handleSubmit, allowSubmit } = useForm()
+export const CreatePostForm: FC<{
+  initialState: PostType
+  postData: PostType
+  setPostData: Dispatch<SetStateAction<PostType>>
+}> = ({ initialState, postData, setPostData }) => {
+  const { handleChangeText, handleSubmit, allowSubmit } = useForm(initialState, postData, setPostData)
 
   return (
     <View style={styles.form}>
@@ -16,7 +20,7 @@ export const CreatePostForm: FC = () => {
           placeholderText="Name"
           name="name"
           onChangeText={handleChangeText}
-          value={formState.name}
+          value={postData.name}
           keyboardType="default"
           inputStyle={InputStyleEnum.LIGHT}
         />
@@ -24,7 +28,7 @@ export const CreatePostForm: FC = () => {
           placeholderText="Location"
           name="location"
           onChangeText={handleChangeText}
-          value={formState.location}
+          value={postData.location}
           keyboardType="default"
           inputStyle={InputStyleEnum.LIGHT}
           icon={<Feather name="map-pin" size={24} color="#BDBDBD" />}

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 
 import { User } from 'widgets'
 

@@ -1,25 +1,20 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
-const useForm = () => {
-  const initialState = {
-    name: '',
-    location: '',
-  }
+import { PostType } from 'shared'
 
-  const [formState, setFormState] = useState(initialState)
-
+const useForm = (initialState: PostType, postData: PostType, setPostData: Dispatch<SetStateAction<PostType>>) => {
   const handleChangeText = (key: string, inputValue: string) => {
-    setFormState((prevState) => ({ ...prevState, [key]: inputValue }))
+    setPostData((prevState) => ({ ...prevState, [key]: inputValue }))
   }
 
   const handleSubmit = () => {
-    console.log(formState)
-    setFormState(initialState)
+    console.log(postData)
+    setPostData(initialState)
   }
 
-  const allowSubmit = formState.name !== ''
+  const allowSubmit = postData.image !== null && postData.name !== ''
 
-  return { formState, handleChangeText, handleSubmit, allowSubmit }
+  return { handleChangeText, handleSubmit, allowSubmit }
 }
 
 export default useForm
