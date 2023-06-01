@@ -1,10 +1,17 @@
 import { MaterialIcons } from '@expo/vector-icons'
-import { FC } from 'react'
+import { ImagePickerAsset } from 'expo-image-picker'
+import { Dispatch, FC, SetStateAction, useEffect } from 'react'
 
 import { RoundButton, useMediaLibrary } from 'shared'
 
-export const OpenMediaLibrary: FC = () => {
-  const { takeImageHandler } = useMediaLibrary()
+export const OpenMediaLibrary: FC<{ stateAction: Dispatch<SetStateAction<ImagePickerAsset[] | null>> }> = ({
+  stateAction,
+}) => {
+  const { selectedImage, takeImageHandler } = useMediaLibrary()
+
+  useEffect(() => {
+    stateAction(selectedImage)
+  }, [selectedImage])
 
   return (
     <RoundButton

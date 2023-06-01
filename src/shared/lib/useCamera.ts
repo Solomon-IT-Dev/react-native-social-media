@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Alert } from 'react-native'
 
 export const useCamera = () => {
-  const [shot, setShot] = useState<ImagePickerAsset[] | null>()
+  const [shot, setShot] = useState<ImagePickerAsset[] | null>(null)
 
   const [cameraPermissionInfo, requestPermission] = useCameraPermissions()
 

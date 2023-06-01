@@ -1,16 +1,14 @@
 import {
   ImagePickerAsset,
   PermissionStatus,
-  launchCameraAsync,
   launchImageLibraryAsync,
-  useCameraPermissions,
   useMediaLibraryPermissions,
 } from 'expo-image-picker'
 import { useState } from 'react'
 import { Alert } from 'react-native'
 
 export const useMediaLibrary = () => {
-  const [selectedImage, setSelectedImage] = useState<ImagePickerAsset[] | null>()
+  const [selectedImage, setSelectedImage] = useState<ImagePickerAsset[] | null>(null)
 
   const [mediaLibraryPermissionInfo, requestPermission] = useMediaLibraryPermissions()
 

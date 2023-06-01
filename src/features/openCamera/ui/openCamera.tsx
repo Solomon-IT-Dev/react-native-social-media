@@ -1,10 +1,17 @@
 import { Ionicons } from '@expo/vector-icons'
-import { FC } from 'react'
+import { ImagePickerAsset } from 'expo-image-picker'
+import { Dispatch, FC, SetStateAction, useEffect } from 'react'
 
 import { RoundButton, useCamera } from 'shared'
 
-export const OpenCamera: FC = () => {
-  const { makeShotHandler } = useCamera()
+export const OpenCamera: FC<{ stateAction: Dispatch<SetStateAction<ImagePickerAsset[] | null>> }> = ({
+  stateAction,
+}) => {
+  const { shot, makeShotHandler } = useCamera()
+
+  useEffect(() => {
+    stateAction(shot)
+  }, [shot])
 
   return (
     <RoundButton

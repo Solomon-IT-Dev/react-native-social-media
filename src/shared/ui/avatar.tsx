@@ -19,8 +19,8 @@ export const Avatar: FC<IAvatar> = ({ src, size = AvatarSizeEnum.NORMAL }) => (
     <Image
       alt="User avatar"
       source={src ? { uri: src } : require('shared/assets/images/avatar-placeholder.png')}
+      resizeMode="cover"
       style={{
-        resizeMode: 'cover',
         width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
         height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
       }}
