@@ -19,6 +19,8 @@ export * from './lib/useMediaLibrary'
 // ./types
 export * from './types/app'
 export * from './types/image'
+export * from './types/input'
+export * from './types/post'
 
 // ./icons
 export * from './assets/icons/plusCircle'

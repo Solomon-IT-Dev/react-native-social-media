@@ -1,5 +1,7 @@
-import { FC, useState } from 'react'
+import { FC, ReactElement, useState } from 'react'
 import { KeyboardTypeOptions, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+
+import { InputStyleEnum } from 'shared'
 
 interface ITextInput {
   name: string
@@ -9,6 +11,8 @@ interface ITextInput {
   placeholderText?: string
   keyboardType?: KeyboardTypeOptions
   secureTextEntry?: boolean
+  inputStyle?: InputStyleEnum
+  icon?: ReactElement
 }
 
 export const Input: FC<ITextInput> = ({
@@ -19,6 +23,8 @@ export const Input: FC<ITextInput> = ({
   placeholderText,
   keyboardType,
   secureTextEntry = false,
+  inputStyle = InputStyleEnum.CONTAIN,
+  icon,
 }) => {
   const [isFocused, setIsFocused] = useState(false)
   const [isSecureText, setSecureText] = useState(secureTextEntry)
@@ -40,7 +46,11 @@ export const Input: FC<ITextInput> = ({
       {labelText && <Text style={styles.inputLabel}>{labelText}</Text>}
       <View style={styles.container}>
         <TextInput
-          style={[styles.input, isFocused && styles.inputFocused]}
+          style={
+            inputStyle === InputStyleEnum.CONTAIN
+              ? [styles.inputContain, isFocused && styles.inputContainFocused]
+              : { ...styles.inputLight, paddingLeft: icon ? 28 : 0 }
+          }
           keyboardType={keyboardType}
           placeholder={placeholderText}
           placeholderTextColor="#BDBDBD"
@@ -55,6 +65,7 @@ export const Input: FC<ITextInput> = ({
             <Text style={styles.toggleButtonText}>{isSecureText ? 'Show' : 'Hide'}</Text>
           </TouchableOpacity>
         )}
+        {icon && <View style={styles.iconContainer}>{icon}</View>}
       </View>
     </View>
   )
@@ -72,13 +83,15 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
   },
-  input: {
+  inputContain: {
     height: 52,
-    padding: 16,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
     fontFamily: 'Raleway-Regular',
     fontWeight: '400',
     fontSize: 16,
     lineHeight: 20,
+    letterSpacing: -0.1,
     borderWidth: 1,
     borderRadius: 8,
     borderStyle: 'solid',
@@ -86,9 +99,23 @@ const styles = StyleSheet.create({
     color: '#212121',
     backgroundColor: '#F6F6F6',
   },
-  inputFocused: {
+  inputContainFocused: {
     borderColor: '#FF6C00',
     backgroundColor: '#FFFFFF',
+  },
+  inputLight: {
+    height: 52,
+    paddingVertical: 14,
+    paddingRight: 16,
+    fontFamily: 'Raleway-Regular',
+    fontWeight: '400',
+    fontSize: 16,
+    lineHeight: 20,
+    letterSpacing: -0.1,
+    borderBottomWidth: 1,
+    borderStyle: 'solid',
+    borderColor: '#E8E8E8',
+    color: '#212121',
   },
   toggleButton: {
     position: 'absolute',
@@ -101,5 +128,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 19,
     color: '#1B4371',
+  },
+  iconContainer: {
+    position: 'absolute',
+    lift: 0,
+    paddingVertical: 14,
   },
 })

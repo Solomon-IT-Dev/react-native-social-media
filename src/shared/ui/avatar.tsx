@@ -12,8 +12,9 @@ export const Avatar: FC<IAvatar> = ({ src, size = AvatarSizeEnum.NORMAL }) => (
   <View
     style={{
       ...styles.avatarContainer,
-      width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
-      height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
+      width: size,
+      height: size,
+      borderRadius: size === AvatarSizeEnum.EXTRASMALL ? 50 : 16,
     }}
   >
     <Image
@@ -21,8 +22,8 @@ export const Avatar: FC<IAvatar> = ({ src, size = AvatarSizeEnum.NORMAL }) => (
       source={src ? { uri: src } : require('shared/assets/images/avatar-placeholder.png')}
       resizeMode="cover"
       style={{
-        width: size === AvatarSizeEnum.NORMAL ? 120 : 60,
-        height: size === AvatarSizeEnum.NORMAL ? 120 : 60,
+        width: size,
+        height: size,
       }}
     />
   </View>
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
   avatarContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 16,
     overflow: 'hidden',
     backgroundColor: '#F6F6F6',
   },

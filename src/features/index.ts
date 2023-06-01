@@ -1,5 +1,7 @@
 export * from './logInForm'
 export * from './signUpForm'
+export * from './createPostForm'
+export * from './formCleaner'
 export * from './entryPageSwitch'
 export * from './logOut'
 export * from './goBack'

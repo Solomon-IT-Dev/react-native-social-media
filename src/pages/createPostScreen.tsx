@@ -1,18 +1,17 @@
 import { FC } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 import { PostCreator } from 'widgets'
 
 export const CreatePostScreen: FC = () => (
-  <ScrollView style={styles.container}>
+  <View style={styles.container}>
     <PostCreator />
-  </ScrollView>
+  </View>
 )
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 32,
-    paddingBottom: 34,
     paddingHorizontal: 16,
     flex: 1,
     backgroundColor: '#FFFFFF',
