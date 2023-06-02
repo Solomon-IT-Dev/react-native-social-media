@@ -15,6 +15,7 @@ export * from './ui/background'
 // ./lib
 export * from './lib/useCamera'
 export * from './lib/useMediaLibrary'
+export * from './lib/useLocation'
 
 // ./types
 export * from './types/app'

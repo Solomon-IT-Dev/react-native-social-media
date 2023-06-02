@@ -30,18 +30,20 @@ export const NestedRoutes: FC = () => {
       <NestedStack.Screen
         name="Comments"
         component={CommentsScreen}
-        options={{
+        options={() => ({
           headerTitle: () => <TitleM text="Comments" />,
           headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
-        }}
+          tabBarVisible: false,
+        })}
       />
       <NestedStack.Screen
         name="Map"
         component={MapScreen}
-        options={{
+        options={() => ({
           headerTitle: () => <TitleM text="Comments" />,
           headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
-        }}
+          tabBarVisible: false,
+        })}
       />
     </NestedStack.Navigator>
   )

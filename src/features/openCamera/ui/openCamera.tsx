@@ -1,19 +1,24 @@
 import { Ionicons } from '@expo/vector-icons'
 import { Dispatch, FC, SetStateAction, useEffect } from 'react'
 
-import { PostType, RoundButton, useCamera } from 'shared'
+import { PostType, RoundButton, useCamera, useLocation } from 'shared'
 
 export const OpenCamera: FC<{ stateAction: Dispatch<SetStateAction<PostType>> }> = ({ stateAction }) => {
   const { shot, makeShotHandler } = useCamera()
+  const { location, getLocationHandler } = useLocation()
 
   useEffect(() => {
-    stateAction((prevState) => ({ ...prevState, image: shot }))
+    stateAction((prevState) => ({
+      ...prevState,
+      image: shot,
+      coords: { lat: location?.coords.latitude, lng: location?.coords.longitude },
+    }))
   }, [shot])
 
-  return (
-    <RoundButton
-      icon={<Ionicons name="md-camera" size={24} color="#BDBDBD" />}
-      onPress={() => makeShotHandler([16, 9], 0.8)}
-    />
-  )
+  const cameraHandler = () => {
+    makeShotHandler([16, 9], 0.8)
+    getLocationHandler()
+  }
+
+  return <RoundButton icon={<Ionicons name="md-camera" size={24} color="#BDBDBD" />} onPress={() => cameraHandler()} />
 }

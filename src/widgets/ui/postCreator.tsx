@@ -13,6 +13,7 @@ const initialState: PostType = {
   image: null,
   name: '',
   location: '',
+  coords: undefined,
 }
 
 export const PostCreator: FC = () => {
