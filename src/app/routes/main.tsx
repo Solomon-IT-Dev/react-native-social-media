@@ -9,6 +9,8 @@ import { GoBack, LogOut } from 'features'
 
 import { TitleM } from 'shared'
 
+import { NestedRoutes } from './nested'
+
 const MainTab = createBottomTabNavigator()
 
 export const MainRoutes: FC = () => (
@@ -19,11 +21,12 @@ export const MainRoutes: FC = () => (
     }}
   >
     <MainTab.Screen
-      name="Posts"
-      component={PostsScreen}
+      name="RootPosts"
+      component={NestedRoutes}
       options={{
-        headerTitle: () => <TitleM text="Posts" />,
-        headerRight: () => <LogOut style={{ marginRight: 16 }} />,
+        headerShown: false,
+        // headerTitle: () => <TitleM text="Posts" />,
+        // headerRight: () => <LogOut style={{ marginRight: 16 }} />,
         tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#1B4371' : color} />,
       }}
     />
@@ -51,8 +54,8 @@ export const MainRoutes: FC = () => (
       }}
     />
     <MainTab.Screen
-      name="Profile"
-      component={ProfileScreen}
+      name="RootProfile"
+      component={NestedRoutes}
       options={{
         headerShown: false,
         tabBarIcon: ({ focused, color }) => <Feather name="user" size={24} color={focused ? '#1B4371' : color} />,

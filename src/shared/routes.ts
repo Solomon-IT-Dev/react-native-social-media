@@ -6,6 +6,8 @@ export type RootStackParamList = {
   Posts: undefined
   Create: undefined
   Profile: undefined
+  Comments: undefined
+  Map: undefined
 }
 
 export type NavProp<Screen extends keyof RootStackParamList> = NativeStackNavigationProp<RootStackParamList, Screen>
