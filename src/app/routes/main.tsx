@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { FC } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { CreatePostScreen, PostsScreen, ProfileScreen } from 'pages'
+import { CreatePostScreen } from 'pages'
 
-import { GoBack, LogOut } from 'features'
+import { GoBack } from 'features'
 
 import { TitleM } from 'shared'
 
@@ -25,8 +25,6 @@ export const MainRoutes: FC = () => (
       component={NestedRoutes}
       options={{
         headerShown: false,
-        // headerTitle: () => <TitleM text="Posts" />,
-        // headerRight: () => <LogOut style={{ marginRight: 16 }} />,
         tabBarIcon: ({ focused, color }) => <Feather name="grid" size={24} color={focused ? '#1B4371' : color} />,
       }}
     />

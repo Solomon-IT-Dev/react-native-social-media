@@ -16,9 +16,8 @@ export const Map: FC<PostType> = ({ name, coords }) => (
       longitudeDelta: 0.0421,
     }}
   >
-    <Marker
-      coordinate={{ latitude: coords?.lat ? coords.lat : 37.78825, longitude: coords?.lng ? coords.lng : -122.4324 }}
-      title={name ? name : undefined}
-    />
+    {coords?.lat && coords.lng && (
+      <Marker coordinate={{ latitude: coords.lat, longitude: coords.lng }} title={name ? name : undefined} />
+    )}
   </MapView>
 )

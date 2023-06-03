@@ -40,7 +40,7 @@ export const NestedRoutes: FC = () => {
         name="Map"
         component={MapScreen}
         options={() => ({
-          headerTitle: () => <TitleM text="Comments" />,
+          headerTitle: () => <TitleM text="Map" />,
           headerLeft: () => <GoBack style={{ marginLeft: 16 }} />,
           tabBarVisible: false,
         })}
