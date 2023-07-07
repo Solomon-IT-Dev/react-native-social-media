@@ -2,10 +2,10 @@ import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 import 'react-native-gesture-handler'
-
-import { Background, Logo } from 'shared'
+import { Provider } from 'react-redux'
 
 import { Routing } from './routes'
+import { store } from './store'
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -23,14 +23,14 @@ const App = () => {
   }, [])
 
   if (!fontsLoaded) {
-    return (
-      <Background>
-        <Logo />
-      </Background>
-    )
+    return null
   } else SplashScreen.hideAsync()
 
-  return <Routing />
+  return (
+    <Provider store={store}>
+      <Routing />
+    </Provider>
+  )
 }
 
 export default App

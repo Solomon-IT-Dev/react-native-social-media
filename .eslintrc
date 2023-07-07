@@ -17,13 +17,16 @@
           "**/assets/*/*",
           "**/types/*",
           "**/lib/*",
+          "**/model",
           "pages/*",
           "processes/*",
           "widgets/*",
           "features/*",
           "entities",
           "entities/*",
-          "shared/*"
+          "shared/*",
+          "firebase/*",
+          "@env"
         ]
       }
     ],

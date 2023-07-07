@@ -17,6 +17,8 @@
       "entities/*": ["./src/entities/*"],
       "shared": ["./src/shared"],
       "shared/*": ["./src/shared/*"],
-    }
+      "@env": ["./"]
+    },
+    "typeRoots": ["./src/shared/types"],
   }
 }

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-social-media",
+    "name": "Magnum Opus",
     "slug": "react-native-social-media",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,9 +13,11 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
