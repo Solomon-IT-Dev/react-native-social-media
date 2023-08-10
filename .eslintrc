@@ -15,9 +15,11 @@
         "allow": [
           "**/ui/*",
           "**/assets/*/*",
+          "**/hooks/*",
           "**/types/*",
           "**/lib/*",
           "**/model",
+          "app/*",
           "pages/*",
           "processes/*",
           "widgets/*",

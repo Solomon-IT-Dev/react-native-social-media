@@ -17,11 +17,15 @@ export * from './lib/useCamera'
 export * from './lib/useMediaLibrary'
 export * from './lib/useLocation'
 
+// ./hooks
+export * from './hooks/redux'
+
 // ./types
 export * from './types/app'
 export * from './types/image'
 export * from './types/input'
 export * from './types/post'
+export * from './types/user'
 
 // ./icons
 export * from './assets/icons/plusCircle'

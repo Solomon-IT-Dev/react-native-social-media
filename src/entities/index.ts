@@ -8,3 +8,6 @@ export * from './camera/ui/cameraActionBox'
 
 // model
 export * from './auth/model'
+
+// firebase
+export * from './firebase/config'

@@ -7,7 +7,6 @@ import {
   FIREBASE_STORAGE_BUCKET,
 } from '@env'
 import { initializeApp } from 'firebase/app'
-import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,
@@ -18,6 +17,4 @@ const firebaseConfig = {
   appId: FIREBASE_APP_ID,
 }
 
-const firebaseApp = initializeApp(firebaseConfig)
-
-export default firebaseApp
+export const firebaseApp = initializeApp(firebaseConfig)

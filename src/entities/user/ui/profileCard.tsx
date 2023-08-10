@@ -26,7 +26,7 @@ export const ProfileCard: FC<IProfileCard> = ({ avatar, profileAction, userName,
 const styles = StyleSheet.create({
   avatarContainer: {
     zIndex: 3,
-    marginHorizontal: 'auto',
+    marginHorizontal: 120,
     alignItems: 'center',
     justifyContent: 'center',
     transform: [{ translateY: 60 }],
