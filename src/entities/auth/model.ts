@@ -1,11 +1,17 @@
 import { Dispatch, createSlice } from '@reduxjs/toolkit'
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from 'firebase/auth'
 
 import { firebaseApp } from 'entities'
 
 import { UserType } from 'shared'
 
-const initialState = { userId: null, userName: null, userEmail: null, isAuth: false }
+const initialState = { userId: '', userName: '', userEmail: '', isAuth: false }
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -81,7 +87,7 @@ export const authSignOutUser = () => async (dispatch: Dispatch) => {
 export const authStateChange = () => async (dispatch: Dispatch) => {
   try {
     const auth = getAuth(firebaseApp)
-    await auth.onAuthStateChanged((user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(authSlice.actions.changeUserAuthState({ isAuth: true }))
         dispatch(
@@ -94,6 +100,6 @@ export const authStateChange = () => async (dispatch: Dispatch) => {
       }
     })
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }

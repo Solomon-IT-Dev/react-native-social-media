@@ -11,13 +11,15 @@ import { CameraView, PostImage, PostType, RoundButton, TitleS } from 'shared'
 
 const initialState: PostType = {
   image: null,
+  imageDownloadURL: '',
   name: '',
   location: '',
-  coords: undefined,
+  coords: { lat: null, lng: null },
+  user: { id: '', login: '' },
 }
 
 export const PostCreator: FC = () => {
-  const [postData, setPostData] = useState(initialState)
+  const [postData, setPostData] = useState<PostType>(initialState)
 
   return (
     <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">

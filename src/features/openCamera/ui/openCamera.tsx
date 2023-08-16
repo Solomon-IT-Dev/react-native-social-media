@@ -8,11 +8,15 @@ export const OpenCamera: FC<{ stateAction: Dispatch<SetStateAction<PostType>> }>
   const { location, getLocationHandler } = useLocation()
 
   useEffect(() => {
-    stateAction((prevState) => ({
-      ...prevState,
-      image: shot,
-      coords: { lat: location?.coords.latitude, lng: location?.coords.longitude },
-    }))
+    stateAction((prevState) =>
+      location
+        ? {
+            ...prevState,
+            image: shot,
+            coords: { lat: location.coords.latitude, lng: location.coords.longitude },
+          }
+        : { ...prevState, image: shot }
+    )
   }, [shot])
 
   const cameraHandler = () => {
