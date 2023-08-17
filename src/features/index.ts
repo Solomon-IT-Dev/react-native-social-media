@@ -1,5 +1,6 @@
 export * from './logInForm'
 export * from './signUpForm'
+export * from './renderPostsList'
 export * from './createPostForm'
 export * from './formCleaner'
 export * from './entryPageSwitch'

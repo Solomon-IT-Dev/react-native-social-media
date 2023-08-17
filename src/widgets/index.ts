@@ -1,6 +1,7 @@
 // ./ui
 export * from './ui/logIn'
 export * from './ui/signUp'
+export * from './ui/posts'
 export * from './ui/user'
 export * from './ui/postCreator'
 export * from './ui/profile'
